@@ -1,0 +1,177 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  width: 566px;
+  padding: 64px;
+  border-radius: 30px;
+  position: relative;
+  z-index: 1001;
+  max-width: 90%;
+  box-sizing: border-box;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  width: 32px;
+  height: 32px;
+  border: none;
+  cursor: pointer;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.h2class {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.textclass {
+  max-width: 438px;
+  color: rgba(25, 26, 21, 0.5);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.input::placeholder {
+  color: rgba(25, 26, 21, 1);
+}
+
+.passwordWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input {
+  margin-bottom: 18px;
+  padding: 16px;
+  border: 1px solid rgba(25, 26, 21, 0.1);
+  border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-right: 30px;
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.checkmark13 {
+  width: 20px;
+  height: 20px;
+}
+
+.passwordToggleIcon svg path {
+  stroke: rgba(25, 26, 21, 1);
+}
+
+.passwordToggleIcon:hover svg path {
+  stroke: #0056b3;
+}
+
+.passwordToggleIcon:active svg path {
+  stroke: #003366;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.submitButton {
+  margin-top: 12px;
+  padding: 16px 0px;
+  background-color: #3470ff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.submitButton:hover,
+.submitButton:focus,
+.submitButton:active {
+  padding: 16px 0px;
+}
+
+@media (max-width: 1024px) {
+  .modalContent {
+    width: 80%;
+    padding: 48px;
+  }
+
+  .h2class {
+    font-size: 32px;
+  }
+
+  .textclass {
+    max-width: 380px;
+  }
+
+  .input {
+    padding: 14px;
+  }
+
+  .submitButton {
+    padding: 14px 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modalContent {
+    width: 90%;
+    padding: 32px;
+  }
+
+  .h2class {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .textclass {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .submitButton {
+    padding: 14px 0px;
+  }
+
+  .closeButton {
+    font-size: 30px;
+  }
+}
