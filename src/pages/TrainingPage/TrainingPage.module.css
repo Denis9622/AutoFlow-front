@@ -1,0 +1,16 @@
+/* TrainingPage.module.css */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Центрирует элементы по горизонтали */
+  align-items: flex-start; /* Выровняет элементы по верху контейнера */
+  gap: 20px; /* Добавляет промежуток между элементами */
+  border-radius: 8px; /* Скругление углов */
+    padding: 0px 128px;
+    /* background-color: #f3f3f3; */
+
+}
+/* .coponentcard{
+  background-color: #ffffff;
+
+} */

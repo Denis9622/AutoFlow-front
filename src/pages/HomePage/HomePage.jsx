@@ -9,16 +9,15 @@ function HomePage() {
       <div className={styles.hero}>
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>
-            The road to the <span className={styles.logospan}>depths</span> of
-            the human soul
+            Transform your business with{' '}
+            <span className={styles.logospan}>AI Automation</span>
           </h1>
           <p className={styles.heroText}>
-            We help you to reveal your potential, overcome challenges and find a
-            guide in your own life with the help of our experienced
-            psychologists.
+            We help you to streamline processes, enhance productivity, and
+            unlock new potential with our AI-powered solutions.
           </p>
           <button
-            onClick={() => navigate('/catalog')}
+            onClick={() => navigate('/training')}
             className={styles.button}
           >
             Get started
@@ -38,23 +37,32 @@ function HomePage() {
               className={styles.checkmark}
             />
             <div className={styles.column}>
-              <p className={styles.labelText}>Experienced psychologists</p>
-              <p className={styles.number}>15,000</p>
+              <p className={styles.labelText}>AI Training Programs</p>
+              <p className={styles.number}>+900 Pages</p>
             </div>
           </div>
-          <div className={`${styles.label} ${styles.label2}`}>
+          {/* <div className={`${styles.label} ${styles.label2}`}>
             <img
               src="/images/question.svg"
               alt="Checkmark"
               className={styles.checkmark12}
             />
+          </div> */}
+          <div className={`${styles.label} ${styles.label2}`}>
+            <p className={styles.labelText}>Automated Outreach</p>
+            <p className={styles.number}>20,000 Leads</p>
           </div>
-          <div className={`${styles.label} ${styles.label3}`}>
+
+          {/* <div className={`${styles.label} ${styles.label3}`}>
             <img
               src="/images/users.svg"
               alt="Checkmark"
               className={styles.checkmark13}
             />
+          </div> */}
+          <div className={`${styles.label} ${styles.label3}`}>
+            <p className={styles.labelText}>Sales Insights</p>
+            <p className={styles.number}>Real-time</p>
           </div>
         </div>
       </div>

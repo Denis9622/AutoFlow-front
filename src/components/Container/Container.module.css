@@ -1,0 +1,22 @@
+.container {
+  background-image: url('/public/images/Picture.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+@media (max-width: 1024px) {
+  .container {
+    background-position: top; 
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    background-position: bottom; 
+    padding: 20px; 
+  }
+}

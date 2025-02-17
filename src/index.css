@@ -14,11 +14,14 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 body {
   max-width: 1440px; 
   margin: 0 auto;
+  background-color: #f3f3f3;
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

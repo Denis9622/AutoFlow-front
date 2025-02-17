@@ -54,7 +54,8 @@ function Header() {
       <header className={styles.header}>
         <h1 className={styles.logo}>
           <a href="/">
-            <span className={styles.logospan}>psychologists.</span>services
+            aiautomate.
+            <span className={styles.logospan}>services</span>
           </a>
         </h1>
 
@@ -70,27 +71,59 @@ function Header() {
                 Home
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/catalog"
-                className={({ isActive }) =>
-                  isActive ? styles.navLinkActive : styles.navLink
-                }
-              >
-                Psychologists
-              </NavLink>
-            </li>
             {user && (
-              <li>
-                <NavLink
-                  to="/favorites"
-                  className={({ isActive }) =>
-                    isActive ? styles.navLinkActive : styles.navLink
-                  }
-                >
-                  Favorites
-                </NavLink>
-              </li>
+              <>
+                <li>
+                  <NavLink
+                    to="/training"
+                    className={({ isActive }) =>
+                      isActive ? styles.navLinkActive : styles.navLink
+                    }
+                  >
+                    AI Training
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/outreach"
+                    className={({ isActive }) =>
+                      isActive ? styles.navLinkActive : styles.navLink
+                    }
+                  >
+                    Outreach
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/sales-support"
+                    className={({ isActive }) =>
+                      isActive ? styles.navLinkActive : styles.navLink
+                    }
+                  >
+                    Sales Support
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/communication"
+                    className={({ isActive }) =>
+                      isActive ? styles.navLinkActive : styles.navLink
+                    }
+                  >
+                    Communication
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/dashboard"
+                    className={({ isActive }) =>
+                      isActive ? styles.navLinkActive : styles.navLink
+                    }
+                  >
+                    Dashboard
+                  </NavLink>
+                </li>
+              </>
             )}
           </ul>
         </nav>
@@ -99,6 +132,9 @@ function Header() {
           {user ? (
             <>
               <span className={styles.username}>{user.name || user.email}</span>
+              {/* <span className={styles.username}>
+                {user.displayName || user.email}
+              </span> */}
               <button
                 onClick={handleLogout}
                 className={`${styles.linkAuth} ${styles.logoutButton}`}
