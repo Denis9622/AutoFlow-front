@@ -11,23 +11,36 @@ function ChatSupport() {
     if (!message.trim()) return;
 
     const newMessage = { text: message, sender: 'user' };
-    setMessages([...messages, newMessage]);
+    setMessages(prev => [...prev, newMessage]);
     setMessage('');
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/support', {
-        message,
-      });
-      setMessages(prev => [
-        ...prev,
-        { text: response.data.reply, sender: 'support' },
-      ]);
+      await axios.post('http://localhost:5000/api/support', { message });
+
+      // ✅ Добавляем автоответ от поддержки
+      setTimeout(() => {
+        setMessages(prev => [
+          ...prev,
+          {
+            text: 'Спасибо за обращение! Ваша заявка принята.',
+            sender: 'support',
+          },
+        ]);
+      }, 500); // Добавляем небольшую задержку для реалистичности
     } catch (error) {
-      console.error('Ошибка отправки в поддержку:', error);
+      console.error(
+        '❌ Ошибка отправки:',
+        error.response?.data || error.message
+      );
       setMessages(prev => [
         ...prev,
-        { text: '❌ Ошибка отправки', sender: 'error' },
+        {
+          text: `❌ Ошибка: ${
+            error.response?.data?.message || 'Неизвестная ошибка'
+          }`,
+          sender: 'error',
+        },
       ]);
     } finally {
       setLoading(false);
