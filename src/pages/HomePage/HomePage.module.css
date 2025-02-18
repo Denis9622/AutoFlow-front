@@ -2,11 +2,12 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  
+  padding: 78px 0px 140px 0px;
+  margin: 0 auto;
 }
 
 .heroContent {
-  margin: 126px 125px 140px 128px;
+  /* margin: 126px 125px 140px 128px; */
   color: #f7f7f7;
   max-width: 595px;
 }
@@ -89,7 +90,7 @@
 }
 
 .label2 {
-    display: flex;
+  display: flex;
   flex-direction: column;
   width: 100px;
   height: 100px;
@@ -106,7 +107,7 @@
   width: 100px;
   height: 100px;
   top: 38px;
-  left: 430px;
+  left: 550px;
   border-radius: 10px;
   background-color: #fbc75e;
   transform: rotate(+15deg);
@@ -141,10 +142,11 @@
   height: 30px;
 }
 
-  .image{
-    width: 464px;
-    height: 526px;
-  }
+.image {
+  margin-left: 125PX;
+  width: 464px;
+  height: 526px;
+}
 
 @media (max-width: 1024px) {
   .hero {

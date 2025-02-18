@@ -4,14 +4,8 @@ import IntegrationSection from '../../components/Training/IntegrationSection';
 import QuizSection from '../../components/Training/QuizSection';
 import styles from './TrainingPage.module.css';
 
-import Header from '../../components/Header/Header';
-
-
-
 function TrainingPage() {
   return (
-    <div>
-      <Header />
 
       <div className={styles.container}>
         <h1>AI Training & Onboarding Automation</h1>
@@ -26,7 +20,6 @@ function TrainingPage() {
         <QuizSection />
         <UploadSection />
       </div>
-    </div>
   );
 }
 

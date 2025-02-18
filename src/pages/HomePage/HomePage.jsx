@@ -5,7 +5,6 @@ function HomePage() {
   const navigate = useNavigate();
 
   return (
-    <div>
       <div className={styles.hero}>
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>
@@ -66,7 +65,6 @@ function HomePage() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
 

@@ -1,6 +1,92 @@
-.aiAvatarSection{
-  width: 400px;
-  background-color: #fff;
-  border-radius: 20px;
+.aiAvatarSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fff;
   padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+    width: 400px;
+
+}
+
+.aiAvatarSection img{
+  border-radius: 20px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.avatarButton {
+    width: 100%;
+
+  /* margin-top: 15px; */
+  padding: 18px 50px;
+  /* font-size: 16px; */
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* .avatarButton:hover {
+  background: #0056b3;
+    padding: 10px 15px;
+
+} */
+.avatarButton:hover,
+.avatarButton:focus,
+.avatarButton:active {
+  padding: 18px 50px;
+  background-color: #0056b3;
+}
+
+.avatarDialog {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* margin-top: 15px; */
+  padding: 15px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.inputField {
+  width: 100%;
+  padding: 8px;
+  /* margin-right: 5px; */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.sendButton {
+  padding: 18px 50px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+
+.sendButton:hover,
+.sendButton:focus,
+.sendButton:active {
+  padding: 18px 50px;
+  background-color: #218838;
 }

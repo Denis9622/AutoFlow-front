@@ -1,4 +1,7 @@
-.integrationSection{
+.actionsSection{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   width: 400px;
   background-color: #fff;
   border-radius: 20px;

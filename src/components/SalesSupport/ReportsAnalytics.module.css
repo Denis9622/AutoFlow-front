@@ -1,0 +1,11 @@
+.reportsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+    width: 400px;
+
+}
