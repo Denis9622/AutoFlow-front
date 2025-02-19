@@ -8,6 +8,7 @@ function AiAvatarSection() {
   const [aiResponse, setAiResponse] = useState('');
   const [loading, setLoading] = useState(false);
   const [avatarExpression, setAvatarExpression] = useState('neutral'); // Добавляем состояние для выражения лица
+  const [userName] = useState(''); // Добавляем состояние для имени пользователя
 
   const handleAvatarToggle = () => {
     setAvatarActive(prev => !prev);
@@ -27,6 +28,7 @@ function AiAvatarSection() {
         'http://localhost:5000/api/sendMessage',
         {
           message: userMessage,
+          userName: userName, // Отправляем имя пользователя
         }
       );
 
@@ -43,7 +45,6 @@ function AiAvatarSection() {
 
   return (
     <div className={styles.aiAvatarSection}>
-      
       <img
         src={`/public/images/${avatarExpression}.png`}
         alt="AI Avatar"

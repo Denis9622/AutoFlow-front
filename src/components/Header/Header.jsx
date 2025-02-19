@@ -28,11 +28,24 @@ function Header() {
 
       if (!userData) throw new Error('Пользователь не найден');
 
-      localStorage.setItem('user', JSON.stringify(userData));
-      setUser(userData);
+      const completeUserData = {
+        id: userData.data.userId,
+        name: userData.data.userName,
+        email: userData.data.userEmail,
+        accessToken: userData.data.accessToken,
+      };
+
+      localStorage.setItem('user', JSON.stringify(completeUserData));
+      setUser(completeUserData);
       setSignInOpen(false);
     } catch (error) {
       console.error('Ошибка входа:', error);
+
+      const errorMessage =
+        error.response?.data?.message ||
+        error.message ||
+        'Произошла ошибка при входе. Пожалуйста, попробуйте еще раз.';
+      alert(errorMessage);
     }
   };
 
@@ -131,10 +144,14 @@ function Header() {
         <div className={styles.userAuth}>
           {user ? (
             <>
+              <div className={styles.userIconContainer}>
+                <img
+                  src="/images/iconauth.svg"
+                  alt="User Icon"
+                  className={styles.userIcon}
+                />
+              </div>
               <span className={styles.username}>{user.name || user.email}</span>
-              {/* <span className={styles.username}>
-                {user.displayName || user.email}
-              </span> */}
               <button
                 onClick={handleLogout}
                 className={`${styles.linkAuth} ${styles.logoutButton}`}
