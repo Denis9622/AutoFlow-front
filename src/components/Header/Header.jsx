@@ -84,60 +84,56 @@ function Header() {
                 Home
               </NavLink>
             </li>
-            {user && (
-              <>
-                <li>
-                  <NavLink
-                    to="/training"
-                    className={({ isActive }) =>
-                      isActive ? styles.navLinkActive : styles.navLink
-                    }
-                  >
-                    AI Training
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/outreach"
-                    className={({ isActive }) =>
-                      isActive ? styles.navLinkActive : styles.navLink
-                    }
-                  >
-                    Outreach
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/sales-support"
-                    className={({ isActive }) =>
-                      isActive ? styles.navLinkActive : styles.navLink
-                    }
-                  >
-                    Sales Support
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/communication"
-                    className={({ isActive }) =>
-                      isActive ? styles.navLinkActive : styles.navLink
-                    }
-                  >
-                    Communication
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/dashboard"
-                    className={({ isActive }) =>
-                      isActive ? styles.navLinkActive : styles.navLink
-                    }
-                  >
-                    Dashboard
-                  </NavLink>
-                </li>
-              </>
-            )}
+            <li>
+              <NavLink
+                to="/training"
+                className={({ isActive }) =>
+                  isActive ? styles.navLinkActive : styles.navLink
+                }
+              >
+                AI Training
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/outreach"
+                className={({ isActive }) =>
+                  isActive ? styles.navLinkActive : styles.navLink
+                }
+              >
+                Outreach
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/sales-support"
+                className={({ isActive }) =>
+                  isActive ? styles.navLinkActive : styles.navLink
+                }
+              >
+                Sales Support
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/communication"
+                className={({ isActive }) =>
+                  isActive ? styles.navLinkActive : styles.navLink
+                }
+              >
+                Communication
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/dashboard"
+                className={({ isActive }) =>
+                  isActive ? styles.navLinkActive : styles.navLink
+                }
+              >
+                Dashboard
+              </NavLink>
+            </li>
           </ul>
         </nav>
 
