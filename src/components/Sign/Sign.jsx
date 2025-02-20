@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import axios from 'axios'; // Добавляем axios для отправки запроса
 import { signInSchema } from '../../components/Validation/validationSchema';
 import styles from './SignIn.module.css';
 
@@ -16,12 +17,31 @@ function SignIn({ onClose, onLogin }) {
 
   const onSubmit = async data => {
     try {
-      console.log('Отправка данных:', data); 
-      await onLogin(data.email, data.password);
-      setMessage('Login successful!');
-      onClose();
+      console.log('Отправка данных:', data);
+
+      const response = await axios.post(
+        'https://autoflow-beck.onrender.com/api/login',
+        {
+          email: data.email,
+          password: data.password,
+        }
+      );
+
+      console.log('📩 Полученные данные пользователя:', response.data);
+
+      if (response.data && response.data.accessToken) {
+        localStorage.setItem('accessToken', response.data.accessToken); // ✅ Сохраняем токен
+        localStorage.setItem('userName', response.data.userName); // ✅ Сохраняем имя пользователя
+
+        setMessage('✅ Login successful!');
+        onLogin(response.data); // Вызываем `onLogin`, чтобы обновить состояние на главной странице
+        onClose(); // ✅ Закрываем окно входа
+      } else {
+        throw new Error('❌ Access token not received');
+      }
     } catch (error) {
-      setMessage('Error during login. Please try again.');
+      console.error('❌ Ошибка авторизации:', error);
+      setMessage('❌ Error during login. Please try again.');
     }
   };
 
@@ -33,6 +53,7 @@ function SignIn({ onClose, onLogin }) {
         </button>
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
           <h2>Log In</h2>
+
           <input
             type="email"
             placeholder="Email"

@@ -1,11 +1,19 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import styles from './HomePage.module.css';
 
 function HomePage() {
   const navigate = useNavigate();
-  const isAuthenticated = !!(
-    localStorage.getItem('accessToken') || sessionStorage.getItem('accessToken')
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    !!localStorage.getItem('accessToken')
   );
+
+  useEffect(() => {
+    const checkAuth = () =>
+      setIsAuthenticated(!!localStorage.getItem('accessToken'));
+    window.addEventListener('storage', checkAuth); // Отслеживаем изменения в localStorage
+    return () => window.removeEventListener('storage', checkAuth);
+  }, []);
 
   return (
     <div className={styles.hero}>
@@ -29,28 +37,6 @@ function HomePage() {
             className={styles.icon}
           />
         </button>
-      </div>
-      <div className={styles.imageContainer}>
-        <img className={styles.image} src="/images/image.jpg" alt="Hero" />
-        <div className={`${styles.label} ${styles.label1}`}>
-          <img
-            src="/images/feCheck.svg"
-            alt="Checkmark"
-            className={styles.checkmark}
-          />
-          <div className={styles.column}>
-            <p className={styles.labelText}>AI Training Programs</p>
-            <p className={styles.number}>+900 Pages</p>
-          </div>
-        </div>
-        <div className={`${styles.label} ${styles.label2}`}>
-          <p className={styles.labelText}>Automated Outreach</p>
-          <p className={styles.number}>20,000 Leads</p>
-        </div>
-        <div className={`${styles.label} ${styles.label3}`}>
-          <p className={styles.labelText}>Sales Insights</p>
-          <p className={styles.number}>Real-time</p>
-        </div>
       </div>
     </div>
   );
