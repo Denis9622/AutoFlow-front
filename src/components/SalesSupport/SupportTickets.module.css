@@ -7,4 +7,49 @@
   border-radius: 10px;
   text-align: center;
   width: 400px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.supportSection h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.ticketList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ticketItem {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ticketHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.ticketStatus {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 14px;
+  color: #555;
+}
+
+.ticketStatus span:first-child {
+  margin-right: 5px;
+  font-weight: bold;
 }

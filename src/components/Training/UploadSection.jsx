@@ -6,29 +6,42 @@ function UploadSection() {
   const [uploadMessage, setUploadMessage] = useState('');
 
   const handleFileChange = event => {
-    setSelectedFile(event.target.files[0]);
+    const file = event.target.files[0];
+    setSelectedFile(file);
     setUploadMessage('');
   };
 
   const handleUpload = () => {
     if (!selectedFile) {
-      setUploadMessage('Выберите файл для загрузки.');
+      setUploadMessage('Please select a file to upload.');
       return;
     }
 
     setTimeout(() => {
-      setUploadMessage(`Файл "${selectedFile.name}" успешно загружен.`);
+      setUploadMessage(`File "${selectedFile.name}" uploaded successfully.`);
       setSelectedFile(null);
     }, 2000);
   };
 
   return (
     <div className={styles.uploadSection}>
-      <h2>Загрузка обучающих материалов</h2>
-      <input type="file" onChange={handleFileChange} />
+      <h2>Upload Training Materials</h2>
+
+      <input
+        type="file"
+        id="fileInput"
+        onChange={handleFileChange}
+        style={{ display: 'none' }}
+      />
+
+      <label htmlFor="fileInput" className={styles.fileLabel}>
+        {selectedFile ? selectedFile.name : 'Choose a file'}
+      </label>
+
       <button onClick={handleUpload} className={styles.uploadButton}>
-        Загрузить
+        Upload
       </button>
+
       {uploadMessage && <p className={styles.uploadMessage}>{uploadMessage}</p>}
     </div>
   );

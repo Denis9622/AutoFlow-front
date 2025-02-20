@@ -7,8 +7,8 @@ function AiAvatarSection() {
   const [userMessage, setUserMessage] = useState('');
   const [aiResponse, setAiResponse] = useState('');
   const [loading, setLoading] = useState(false);
-  const [avatarExpression, setAvatarExpression] = useState('neutral'); // Добавляем состояние для выражения лица
-  const [userName] = useState(''); // Добавляем состояние для имени пользователя
+  const [avatarExpression, setAvatarExpression] = useState('neutral'); 
+  const [userName] = useState(''); 
 
   const handleAvatarToggle = () => {
     setAvatarActive(prev => !prev);
@@ -21,23 +21,25 @@ function AiAvatarSection() {
 
     setLoading(true);
     setAiResponse('');
-    setAvatarExpression('thinking'); // Устанавливаем выражение лица "думает"
+    setAvatarExpression('thinking'); 
 
     try {
       const response = await axios.post(
         'http://localhost:5000/api/sendMessage',
         {
           message: userMessage,
-          userName: userName, // Отправляем имя пользователя
+          userName: userName,
         }
       );
 
-      setAiResponse(response.data.response || '❌ Ошибка: пустой ответ от AI');
-      setAvatarExpression('happy'); // Устанавливаем счастливое выражение лица при получении ответа
+      setAiResponse(
+        response.data.response || '❌ Error: empty response from AI'
+      );
+      setAvatarExpression('happy'); 
     } catch (error) {
-      setAiResponse('❌ Ошибка при получении ответа AI');
-      console.error('❌ Ошибка AI:', error);
-      setAvatarExpression('neutral'); // Устанавливаем нейтральное выражение лица при ошибке
+      setAiResponse('❌ Error receiving AI response');
+      console.error('❌ AI error:', error);
+      setAvatarExpression('neutral'); 
     } finally {
       setLoading(false);
     }
@@ -51,32 +53,29 @@ function AiAvatarSection() {
         className={styles.avatarImage}
       />
 
-      <h2>🎓 AI-Аватар для обучения</h2>
+      <h2>🎓 AI Avatar for Training</h2>
       <p>
-        Интерактивный AI-аватар помогает адаптировать обучение, отвечая на
-        вопросы.
+        The interactive AI avatar helps adapt training by answering questions.
       </p>
 
       <button className={styles.avatarButton} onClick={handleAvatarToggle}>
-        {avatarActive
-          ? '🔴 Завершить диалог'
-          : '🗣 Взаимодействовать с AI-Аватаром'}
+        {avatarActive ? '🔴 End Dialog' : '🗣 Interact with AI Avatar'}
       </button>
 
       {avatarActive && (
         <div className={styles.avatarDialog}>
-          <p>🤖 Привет! Чем могу помочь в обучении?</p>
+          <p>🤖 Hello! How can I assist with training?</p>
           <input
             type="text"
             value={userMessage}
-            placeholder="Введите вопрос..."
+            placeholder="Enter your question..."
             className={styles.inputField}
             onChange={e => setUserMessage(e.target.value)}
           />
           <button className={styles.sendButton} onClick={handleSendMessage}>
-            Отправить
+            Send
           </button>
-          {loading && <p>⏳ AI думает...</p>}
+          {loading && <p>⏳ AI is thinking...</p>}
           {aiResponse && <p className={styles.aiResponse}>💡 {aiResponse}</p>}
         </div>
       )}

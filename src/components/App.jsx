@@ -10,7 +10,6 @@ import DashboardPage from '../pages/DashboardPage/DashboardPage';
 function App() {
   return (
     <Routes>
-      {/* Container оборачивает все страницы и включает Header */}
       <Route path="/" element={<Container />}>
         <Route index element={<HomePage />} />
         <Route path="training" element={<TrainingPage />} />

@@ -26,9 +26,9 @@ function ChatSupport() {
     try {
       const response = await axios.post('http://localhost:5000/api/support', {
         message,
-        userId: user.id, // Передача ID пользователя
-        userName: user.name, // Передача имени пользователя
-        userEmail: user.email, // Передача email пользователя
+        userId: user.id,
+        userName: user.name, 
+        userEmail: user.email,
       });
 
       setMessages(prev => [
@@ -36,13 +36,11 @@ function ChatSupport() {
         { text: response.data.reply, sender: 'support' },
       ]);
     } catch (error) {
-      console.error('Ошибка отправки:', error.response?.data || error.message);
+      console.error('Send error:', error.response?.data || error.message);
       setMessages(prev => [
         ...prev,
         {
-          text: `Ошибка: ${
-            error.response?.data?.message || 'Неизвестная ошибка'
-          }`,
+          text: `Error: ${error.response?.data?.message || 'Unknown error'}`,
           sender: 'error',
         },
       ]);
@@ -51,13 +49,12 @@ function ChatSupport() {
     }
   };
 
-
   return (
     <section className={styles.chatSection}>
-      <h2>💬 Чат поддержки</h2>
+      <h2>💬 Chat Support</h2>
       {user && (
         <p>
-          👤 Отправка от имени: <strong>{user.name}</strong> ({user.email})
+          👤 Sending as: <strong>{user.name}</strong> ({user.email})
         </p>
       )}
       <div className={styles.chatWindow}>
@@ -76,10 +73,14 @@ function ChatSupport() {
         type="text"
         value={message}
         onChange={e => setMessage(e.target.value)}
-        placeholder="Введите сообщение..."
+        placeholder="Enter message..."
       />
-      <button onClick={handleSend} disabled={loading}>
-        {loading ? '⏳ Отправка...' : 'Отправить'}
+      <button
+        className={styles.chatButton}
+        onClick={handleSend}
+        disabled={loading}
+      >
+        {loading ? '⏳ Sending...' : 'Send'}
       </button>
     </section>
   );

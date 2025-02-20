@@ -1,0 +1,51 @@
+.item {
+  display: flex;
+  align-items: center;
+  background: white;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.item:hover {
+  transform: scale(1.05);
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.title {
+  
+  flex-grow: 1;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.toggleBtn {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+
+.active {
+  background: #e6ffed;
+}
+
+.inactive {
+  background: #ffebe6;
+}
+
+.active .toggleBtn {
+  background: red;
+  color: white;
+}
+
+.inactive .toggleBtn {
+  background: green;
+  color: white;
+}

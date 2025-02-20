@@ -5,8 +5,10 @@
   background: #fff;
   padding: 20px;
   border-radius: 10px;
-  text-align: center;
+  text-align: left;
     width: 400px;
+       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
 
 }
 
@@ -32,9 +34,7 @@
 .avatarButton {
     width: 100%;
 
-  /* margin-top: 15px; */
   padding: 18px 50px;
-  /* font-size: 16px; */
   background: #007bff;
   color: white;
   border: none;

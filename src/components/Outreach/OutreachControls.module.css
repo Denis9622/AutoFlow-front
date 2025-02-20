@@ -6,5 +6,64 @@
   background-color: #fff;
   border-radius: 20px;
   padding: 20px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
   
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.startCampaignButton,
+.checkLeadsButton {
+  padding: 9px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+
+
+
+
+  /* background: #007bff; */
+  /* color: white; */
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.startCampaignButton {
+  background: #28a745;
+  color: white;
+}
+
+.checkLeadsButton {
+  background: #007bff;
+  color: white;
+}
+
+.startCampaignButton:hover {
+  background: #218838;
+}
+
+.checkLeadsButton:hover {
+  background: #0056b3;
+}
+
+.startCampaignButton:hover,
+.startCampaignButton:focus,
+.startCampaignButton:active {
+  padding: 9px 25px;
+  /* background-color: #218838; */
+}
+.checkLeadsButton:hover,
+.checkLeadsButton:focus,
+.checkLeadsButton:active {
+  padding: 9px 25px;
+  /* background-color: #218838; */
 }

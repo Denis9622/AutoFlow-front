@@ -7,5 +7,40 @@
   border-radius: 10px;
   text-align: center;
     width: 400px;
+       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
 
+}
+
+
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  
+}
+
+.statCard {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
+  width: 30%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.statCard h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.statCard p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.trend {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
 }

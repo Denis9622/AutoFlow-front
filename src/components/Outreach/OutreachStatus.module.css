@@ -6,5 +6,40 @@
   background-color: #fff;
   border-radius: 20px;
   padding: 20px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
   
 }
+
+
+.statusItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px; 
+}
+
+/* .statusList li {
+  font-size: 16px;
+  width: 100%;
+       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       text-align: left;
+
+} */
+
+.active {
+  color: green;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.loading {
+  color: orange;
+  font-weight: bold;
+}
+
+

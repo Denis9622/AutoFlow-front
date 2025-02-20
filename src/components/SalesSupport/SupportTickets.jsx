@@ -15,7 +15,7 @@ function SupportTickets() {
         );
         setTickets(response.data);
       } catch (err) {
-        setError('Ошибка загрузки заявок');
+        setError('Error loading tickets');
         console.error(err);
       } finally {
         setLoading(false);
@@ -25,27 +25,31 @@ function SupportTickets() {
     fetchTickets();
   }, []);
 
-  if (loading) return <p>⏳ Загрузка заявок...</p>;
+  if (loading) return <p>⏳ Loading tickets...</p>;
   if (error) return <p>❌ {error}</p>;
 
   return (
     <section className={styles.supportSection}>
-      <h2>📩 Заявки в поддержку</h2>
+      <h2>📩 Support Tickets</h2>
       {tickets.length === 0 ? (
-        <p>Нет активных заявок.</p>
+        <p>No active tickets.</p>
       ) : (
-        <ul>
+        <ul className={styles.ticketList}>
           {tickets.map(ticket => (
             <li key={ticket._id} className={styles.ticketItem}>
-              <strong>{ticket.userName}</strong> ({ticket.userEmail}) -{' '}
-              <span>{ticket.status}</span>
+              <div className={styles.ticketHeader}>
+                <strong>{ticket.userName}</strong>{' '}
+                <span>({ticket.userEmail})</span>
+              </div>
+              <div className={styles.ticketStatus}>
+                <span>Status:</span> <span>{ticket.status}</span>
+              </div>
             </li>
           ))}
         </ul>
       )}
     </section>
   );
-
 }
 
 export default SupportTickets;

@@ -1,73 +1,42 @@
-import { useEffect, useState } from 'react';
 import styles from './IntegrationSection.module.css';
 
 function IntegrationSection() {
-  const [status, setStatus] = useState({
-    trainual: 'loading',
-    dId: 'loading',
-    anthropic: 'loading',
-    elevenLabs: 'loading',
-  });
-
-  useEffect(() => {
-    async function fetchIntegrationStatus() {
-      try {
-        const response = await fetch('/api/integrations/status'); // Заглушка API
-        const data = await response.json();
-        setStatus({
-          trainual: data.trainual ? 'active' : 'error',
-          dId: data.dId ? 'active' : 'error',
-          anthropic: data.anthropic ? 'active' : 'error',
-          elevenLabs: data.elevenLabs ? 'active' : 'error',
-        });
-      } catch (error) {
-        console.error('Ошибка загрузки статусов интеграций:', error);
-        setStatus({
-          trainual: 'error',
-          dId: 'error',
-          anthropic: 'error',
-          elevenLabs: 'error',
-        });
-      }
-    }
-
-    fetchIntegrationStatus();
-  }, []);
+  const integrations = [
+    { name: 'Trainual', state: 'active', version: '1.2.0' },
+    { name: 'D-ID', state: 'error', version: 'N/A' },
+    { name: 'Anthropic', state: 'active', version: '2.1.3' },
+    { name: 'Eleven Labs', state: 'loading', version: 'N/A' },
+  ];
 
   const getStatusIcon = state => {
     switch (state) {
       case 'active':
-        return '🟢';
+        return '🟢 Active';
       case 'error':
-        return '🔴';
+        return '🔴 Error';
       case 'loading':
-        return '⏳';
+        return '⏳ Loading...';
       default:
-        return '❓';
+        return '❓ Unknown';
     }
   };
 
   return (
     <div className={styles.integrationSection}>
-      <h2>Интеграция</h2>
-      <ul>
-        <li>
-          {getStatusIcon(status.trainual)} Подключение к{' '}
-          <strong>Trainual</strong>
-        </li>
-        <li>
-          {getStatusIcon(status.dId)} Использование <strong>D-ID</strong> для
-          AI-аватара
-        </li>
-        <li>
-          {getStatusIcon(status.anthropic)} <strong>Anthropic AI</strong> для
-          обучения
-        </li>
-        <li>
-          {getStatusIcon(status.elevenLabs)} <strong>11 Labs</strong> для
-          генерации голоса
-        </li>
-      </ul>
+      <h2>🔗 Integration Status</h2>
+      <button className={styles.refreshButton} onClick={() => {}}>
+        🔄 Refresh Status
+      </button>
+      <p>Last updated: --:--</p>
+      <div className={styles.integrationList}>
+        {integrations.map(({ name, state, version }) => (
+          <div key={name} className={styles.integrationCard}>
+            <h3>{name}</h3>
+            <p>Status: {getStatusIcon(state)}</p>
+            <p>Version: {version}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

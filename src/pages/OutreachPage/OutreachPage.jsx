@@ -41,7 +41,7 @@ function OutreachPage() {
     <div className={styles.outreachSection}>
       <div className={styles.outreachtext}>
         <h1>📢 AI Outreach & Lead Reactivation</h1>
-        <p>Автоматизированные рассылки, звонки и реактивация клиентов.</p>
+        <p>Automated mailings, calls, and client reactivation.</p>
       </div>
 
       <div className={styles.outreachContainer}>

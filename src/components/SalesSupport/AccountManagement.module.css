@@ -7,5 +7,59 @@
   border-radius: 10px;
   text-align: center;
     width: 400px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
 
+
+
+.accountList {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.accountItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.accountName {
+  font-weight: bold;
+  color: #333;
+}
+
+.accountRole {
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Додаємо кольорові стилі для ролей */
+.admin {
+  background: #ff4d4d;
+  color: white;
+}
+
+.manager {
+  background: #ffcc00;
+  color: black;
+}
+
+.user {
+  background: #007bff;
+  color: white;
+}
+
+.noAccounts {
+  font-style: italic;
+  color: #777;
 }

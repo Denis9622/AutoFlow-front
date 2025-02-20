@@ -6,5 +6,33 @@
   background-color: #fff;
   border-radius: 20px;
   padding: 20px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
   
+}
+
+
+.progressBar {
+  width: 100%;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: #007bff;
+  transition: width 0.3s ease-in-out;
+}
+
+.progress.full {
+  background: #28a745; /* Зелений колір, якщо всі акаунти підключені */
+}
+
+.fullMessage {
+  color: #28a745;
+  font-weight: bold;
+  margin-top: 8px;
 }

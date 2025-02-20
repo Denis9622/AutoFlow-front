@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/autoflow'; // Укажите ваш реальный API URL
+const API_URL = 'http://localhost:5000/api/autoflow'; 
 
 export const register = async (email, password, name) => {
   const response = await axios.post(`${API_URL}/register`, {
@@ -20,17 +20,16 @@ export const logout = async () => {
   try {
     await axios.post(`${API_URL}/logout`, {}, { withCredentials: true });
 
-    localStorage.removeItem('userId'); // ✅ Очищаем ID пользователя
-    localStorage.removeItem('token'); // ✅ Очищаем токен (если есть)
+    localStorage.removeItem('userId'); 
+    localStorage.removeItem('token'); 
 
-    console.log('Пользователь вышел'); // ✅ Проверяем, сработало ли
+    console.log('Пользователь вышел');
   } catch (error) {
     console.error('Ошибка при выходе:', error);
   }
 };
 
 
-// Получение текущего пользователя
 export const getCurrentUser = async (userId) => {
   const response = await axios.get(`${API_URL}/current-user`, {
     params: { userId },

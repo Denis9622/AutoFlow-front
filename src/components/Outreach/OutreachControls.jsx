@@ -2,24 +2,24 @@ import styles from './OutreachControls.module.css';
 
 function OutreachControls() {
   const startCampaign = () => {
-    console.log('Запуск email-кампании...');
-    // Тут будет вызов API для старта рассылки
+    console.log('Starting email campaign...');
   };
 
   const checkLeads = () => {
-    console.log('Запрос статуса лидов...');
-    // Тут будет API-запрос к CRM
+    console.log('Requesting lead status...');
   };
 
   return (
     <section className={styles.actionsSection}>
-      <h2>⚡ Действия</h2>
-      <button className={styles.startCampaignButton} onClick={startCampaign}>
-        🚀 Запустить кампанию
-      </button>
-      <button className={styles.checkLeadsButton} onClick={checkLeads}>
-        🔍 Проверить лидов
-      </button>
+      <h2>⚡ Outreach Actions</h2>
+      <div className={styles.buttonsContainer}>
+        <button className={styles.startCampaignButton} onClick={startCampaign}>
+          🚀 Start Campaign
+        </button>
+        <button className={styles.checkLeadsButton} onClick={checkLeads}>
+          🔍 Check Leads
+        </button>
+      </div>
     </section>
   );
 }

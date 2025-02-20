@@ -1,8 +1,8 @@
 .supportContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Центрирует элементы по горизонтали */
-  align-items: flex-start; /* Выровняет элементы по верху контейнера */
+  justify-content: center; 
+  align-items: flex-start; 
   gap: 20px;
   padding: 58px 138px 78px 138px;
 

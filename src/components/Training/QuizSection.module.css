@@ -1,7 +1,19 @@
 .quizSection{
+   display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
   width: 400px;
-  background-color: #fff;
-  border-radius: 20px;
-    padding: 20px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
 
+}
+
+
+.comingSoon {
+  font-style: italic;
+  color: #888;
 }

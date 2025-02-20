@@ -16,7 +16,7 @@ function SignIn({ onClose, onLogin }) {
 
   const onSubmit = async data => {
     try {
-      console.log('Отправка данных:', data); // ✅ Проверяем вводимые данные
+      console.log('Отправка данных:', data); 
       await onLogin(data.email, data.password);
       setMessage('Login successful!');
       onClose();

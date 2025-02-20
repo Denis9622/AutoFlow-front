@@ -6,20 +6,19 @@ import styles from './TrainingPage.module.css';
 
 function TrainingPage() {
   return (
+    <div className={styles.container}>
+      <h1>AI Training & Onboarding Automation</h1>
+      <p>
+        Welcome to the AI training and automated employee onboarding system.
+        Here you can upload materials, take tests, and interact with the AI
+        avatar.
+      </p>
 
-      <div className={styles.container}>
-        <h1>AI Training & Onboarding Automation</h1>
-        <p>
-          Добро пожаловать в систему AI-обучения и автоматизированного
-          онбординга сотрудников. Здесь вы можете загружать материалы, проходить
-          тестирование и взаимодействовать с AI-аватаром.
-        </p>
-
-        <AiAvatarSection />
-        <IntegrationSection />
-        <QuizSection />
-        <UploadSection />
-      </div>
+      <AiAvatarSection />
+      <IntegrationSection />
+      <QuizSection />
+      <UploadSection />
+    </div>
   );
 }
 
