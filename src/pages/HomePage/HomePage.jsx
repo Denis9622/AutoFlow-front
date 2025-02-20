@@ -3,7 +3,9 @@ import styles from './HomePage.module.css';
 
 function HomePage() {
   const navigate = useNavigate();
-  const isAuthenticated = !!localStorage.getItem('token'); // Проверка входа
+  const isAuthenticated = !!(
+    localStorage.getItem('accessToken') || sessionStorage.getItem('accessToken')
+  );
 
   return (
     <div className={styles.hero}>
