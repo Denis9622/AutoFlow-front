@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/autoflow'; 
-
+const API_URL = 'https://autoflow-beck.onrender.com/api/autoflow'; 
 export const register = async (email, password, name) => {
   const response = await axios.post(`${API_URL}/register`, {
     email,
