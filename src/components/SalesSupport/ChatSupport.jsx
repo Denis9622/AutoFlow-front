@@ -24,12 +24,15 @@ function ChatSupport() {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/support', {
-        message,
-        userId: user.id,
-        userName: user.name, 
-        userEmail: user.email,
-      });
+      const response = await axios.post(
+        'https://auto-flow-front.vercel.app/api/support',
+        {
+          message,
+          userId: user.id,
+          userName: user.name,
+          userEmail: user.email,
+        }
+      );
 
       setMessages(prev => [
         ...prev,

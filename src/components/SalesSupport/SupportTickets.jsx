@@ -11,7 +11,7 @@ function SupportTickets() {
     const fetchTickets = async () => {
       try {
         const response = await axios.get(
-          'http://localhost:5000/api/support/tickets'
+          'https://auto-flow-front.vercel.app/api/support/tickets'
         );
         setTickets(response.data);
       } catch (err) {
