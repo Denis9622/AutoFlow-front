@@ -48,7 +48,7 @@ function AiAvatarSection() {
   return (
     <div className={styles.aiAvatarSection}>
       <img
-        src={`/public/images/${avatarExpression}.png`}
+        src={`/images/${avatarExpression}.png`}
         alt="AI Avatar"
         className={styles.avatarImage}
       />
