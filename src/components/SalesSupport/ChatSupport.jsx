@@ -25,7 +25,7 @@ function ChatSupport() {
 
     try {
       const response = await axios.post(
-        'https://auto-flow-front.vercel.app/api/support',
+        'https://autoflow-beck.onrender.com/api/support',
         {
           message,
           userId: user.id,

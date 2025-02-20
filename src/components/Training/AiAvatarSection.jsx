@@ -25,7 +25,7 @@ function AiAvatarSection() {
 
     try {
       const response = await axios.post(
-        'https://auto-flow-front.vercel.app/api/sendMessage',
+        'https://autoflow-beck.onrender.com/api/sendMessage',
         {
           message: userMessage,
           userName: userName,
