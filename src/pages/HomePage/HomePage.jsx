@@ -3,9 +3,6 @@ import styles from './HomePage.module.css';
 
 function HomePage() {
   const navigate = useNavigate();
-  const isAuthenticated = !!(
-    localStorage.getItem('accessToken') || sessionStorage.getItem('accessToken')
-  );
 
   return (
     <div className={styles.hero}>
@@ -18,11 +15,8 @@ function HomePage() {
           We help you to streamline processes, enhance productivity, and unlock
           new potential with our AI-powered solutions.
         </p>
-        <button
-          onClick={() => navigate(isAuthenticated ? '/training' : '/register')}
-          className={styles.button}
-        >
-          {isAuthenticated ? 'Get Started' : 'Register'}
+        <button onClick={() => navigate('/training')} className={styles.button}>
+          Get started
           <img
             src="/images/Arrow 16.svg"
             alt="Arrow icon"
