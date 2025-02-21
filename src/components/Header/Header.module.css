@@ -108,12 +108,7 @@
 }
 
 
-.logoutButton:hover,
-.logoutButton:focus,
-.logoutButton:active {
-    padding: 14px 40px;
-  /* background-color: #218838; */
-}
+
 
 .linkAuth:first-child {
   padding: 14px 40px;
@@ -134,6 +129,12 @@
   border: 1px solid rgba(25, 26, 21, 0.2);
 }
 
+.logoutButton:hover,
+.logoutButton:focus,
+.logoutButton:active {
+    padding: 14px 40px;
+  /* background-color: #218838; */
+}
 
 .iconActive {
   width: 8px;
